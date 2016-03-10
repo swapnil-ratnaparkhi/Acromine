@@ -17,6 +17,6 @@ Technical Details
 • Project must be in Xcode 7 
 • Project must be written in Objective-C 
 • Project must use AFNetworking 2.0 for networking 
-•   https://github.com/AFNetworking/AFNetworking 
+• https://github.com/AFNetworking/AFNetworking 
 • Project must use MBProgressHUD for wait indication 
-•   https://github.com/jdg/MBProgressHUD 
+• https://github.com/jdg/MBProgressHUD 
