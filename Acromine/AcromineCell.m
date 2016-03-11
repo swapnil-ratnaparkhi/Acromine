@@ -1,23 +1,20 @@
 //
-//  AcromineTableViewCell.m
+//  AcromineCell.m
 //  Acromine
 //
-//  Created by Swapnil Ratnaparkhi on 2016-03-09.
+//  Created by Swapnil Ratnaparkhi on 2016-03-10.
 //  Copyright © 2016 Swapnil Ratnaparkhi. All rights reserved.
 //
 
-#import "AcromineTableViewCell.h"
+#import "AcromineCell.h"
 
-@implementation AcromineTableViewCell
+@implementation AcromineCell
 
 - (void)awakeFromNib {
-    // Initialization code
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
 }
 
 @end

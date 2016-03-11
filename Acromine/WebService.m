@@ -38,9 +38,8 @@ static NSString *BASE_URL = @"http://www.nactem.ac.uk/software/acromine/";
     
         [self.afSessionManager GET:@"dictionary.py" parameters:parameters success:^(NSURLSessionDataTask * _Nonnull task, id  _Nonnull responseObject) {
             if(((NSArray*)responseObject).count > 0) {
-                NSDictionary *resultsDictionary = [[NSDictionary alloc]initWithDictionary:responseObject[0]][@"lfs"];
-                NSArray *fullForm = [resultsDictionary valueForKey:@"lf"];
-                successHandler(fullForm);
+                NSArray *resultArray = [[NSArray alloc]initWithArray:responseObject[0][@"lfs"]];// [@"lfs"]
+                successHandler(resultArray);
             } else {
                 successHandler((NSArray*)responseObject);
             }
@@ -50,7 +49,5 @@ static NSString *BASE_URL = @"http://www.nactem.ac.uk/software/acromine/";
         }];
 
 }
-
-
 
 @end

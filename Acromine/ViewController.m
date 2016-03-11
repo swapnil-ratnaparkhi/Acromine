@@ -8,11 +8,12 @@
 
 #import "ViewController.h"
 #import "MBProgressHUD.h"
-#import "AcromineTableViewCell.h"
+#import "AcromineCell.h"
 #import "WebService.h"
 #import "MBProgressHUD.h"
+#import "DetailViewController.h"
 
-@interface ViewController () <UITableViewDataSource, UITableViewDataSource,UITextFieldDelegate>
+@interface ViewController () <UITableViewDelegate, UITableViewDataSource,UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *acromineTableView;
 @property (weak, nonatomic) IBOutlet UITextField *acromineTextField;
 @property (nonatomic, strong) NSMutableArray *longMeanings;
@@ -23,7 +24,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = @"Acronyms Example";
     self.longMeanings = [NSMutableArray new];
+    [self.acromineTableView registerNib:[UINib nibWithNibName:@"AcromineCell" bundle:nil] forCellReuseIdentifier:@"acrominetableviewcell"];
+
     [self initialSetup];
     
 }
@@ -46,10 +50,36 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    AcromineTableViewCell *acromineTableViewCell = [tableView dequeueReusableCellWithIdentifier:@"acrominetableviewcell" forIndexPath:indexPath];
-    acromineTableViewCell.meanings.text = [self.longMeanings[indexPath.row] capitalizedString];
+    
+    AcromineCell *acromineTableViewCell = [tableView dequeueReusableCellWithIdentifier:@"acrominetableviewcell" forIndexPath:indexPath];
+    if (!acromineTableViewCell) {
+        acromineTableViewCell = [[[NSBundle mainBundle] loadNibNamed:@"AcromineCell" owner:self options:nil] objectAtIndex:0];
+    }
+
+    acromineTableViewCell.meanings.text = [self.longMeanings[indexPath.row][@"lf"] capitalizedString];
+    acromineTableViewCell.frequenyCount.text = [NSString stringWithFormat:@"%@", self.longMeanings[indexPath.row][@"freq"]];
+    acromineTableViewCell.frequencyYear.text = [NSString stringWithFormat:@"%@", self.longMeanings[indexPath.row][@"since"]];
+
     return acromineTableViewCell;
 }
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [self performSegueWithIdentifier:@"detailviewcontroller" sender:self];
+}
+
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([[segue identifier] isEqualToString:@"detailviewcontroller"]) {
+        DetailViewController *detailViewController = [segue destinationViewController];
+        NSIndexPath *indexPath = [self.acromineTableView indexPathForSelectedRow];
+        detailViewController.acroymnDetailName = self.longMeanings[indexPath.row][@"lf"];
+        detailViewController.acroymnFrequency = [NSString stringWithFormat:@"%@", self.longMeanings[indexPath.row][@"freq"]];
+        detailViewController.acroymnYear = [NSString stringWithFormat:@"%@", self.longMeanings[indexPath.row][@"since"]];
+        detailViewController.acronymsArray = self.longMeanings[indexPath.row][@"vars"];
+    }
+    [self.acromineTableView deselectRowAtIndexPath:[self.acromineTableView indexPathForSelectedRow] animated:YES];
+}
+
 
 #pragma mark - Button Action
 - (IBAction)searchAcromine:(id)sender {

@@ -8,8 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		03ED0D13731CE526305CE44B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FF34A5B4F6A4D626595CE67 /* libPods.a */; };
-		69B2D72F1C913FE200F07238 /* AcromineTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 69B2D72E1C913FE200F07238 /* AcromineTableViewCell.m */; };
 		69B2D7321C91495200F07238 /* WebService.m in Sources */ = {isa = PBXBuildFile; fileRef = 69B2D7311C91495200F07238 /* WebService.m */; };
+		69B2D73A1C92690600F07238 /* AcromineCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 69B2D7381C92690600F07238 /* AcromineCell.m */; };
+		69B2D73B1C92690600F07238 /* AcromineCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69B2D7391C92690600F07238 /* AcromineCell.xib */; };
+		69B2D73E1C926D4200F07238 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 69B2D73D1C926D4200F07238 /* DetailViewController.m */; };
 		69E8B90E1C91271C006F3B10 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 69E8B90D1C91271C006F3B10 /* main.m */; };
 		69E8B9111C91271C006F3B10 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 69E8B9101C91271C006F3B10 /* AppDelegate.m */; };
 		69E8B9141C91271C006F3B10 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 69E8B9131C91271C006F3B10 /* ViewController.m */; };
@@ -20,10 +22,13 @@
 
 /* Begin PBXFileReference section */
 		5FF34A5B4F6A4D626595CE67 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		69B2D72D1C913FE200F07238 /* AcromineTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AcromineTableViewCell.h; sourceTree = "<group>"; };
-		69B2D72E1C913FE200F07238 /* AcromineTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AcromineTableViewCell.m; sourceTree = "<group>"; };
 		69B2D7301C91495200F07238 /* WebService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WebService.h; path = Acromine/WebService.h; sourceTree = "<group>"; };
 		69B2D7311C91495200F07238 /* WebService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WebService.m; path = Acromine/WebService.m; sourceTree = "<group>"; };
+		69B2D7371C92690600F07238 /* AcromineCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AcromineCell.h; sourceTree = "<group>"; };
+		69B2D7381C92690600F07238 /* AcromineCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AcromineCell.m; sourceTree = "<group>"; };
+		69B2D7391C92690600F07238 /* AcromineCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AcromineCell.xib; sourceTree = "<group>"; };
+		69B2D73C1C926D4200F07238 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		69B2D73D1C926D4200F07238 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		69E8B9091C91271C006F3B10 /* Acromine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Acromine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		69E8B90D1C91271C006F3B10 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		69E8B90F1C91271C006F3B10 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -70,8 +75,9 @@
 		69B2D7331C920D3E00F07238 /* TableCell */ = {
 			isa = PBXGroup;
 			children = (
-				69B2D72D1C913FE200F07238 /* AcromineTableViewCell.h */,
-				69B2D72E1C913FE200F07238 /* AcromineTableViewCell.m */,
+				69B2D7371C92690600F07238 /* AcromineCell.h */,
+				69B2D7381C92690600F07238 /* AcromineCell.m */,
+				69B2D7391C92690600F07238 /* AcromineCell.xib */,
 			);
 			name = TableCell;
 			sourceTree = "<group>";
@@ -113,6 +119,8 @@
 				69E8B9101C91271C006F3B10 /* AppDelegate.m */,
 				69E8B9121C91271C006F3B10 /* ViewController.h */,
 				69E8B9131C91271C006F3B10 /* ViewController.m */,
+				69B2D73C1C926D4200F07238 /* DetailViewController.h */,
+				69B2D73D1C926D4200F07238 /* DetailViewController.m */,
 				69E8B9151C91271C006F3B10 /* Main.storyboard */,
 				69E8B9181C91271C006F3B10 /* Assets.xcassets */,
 				69E8B91A1C91271C006F3B10 /* LaunchScreen.storyboard */,
@@ -193,6 +201,7 @@
 				69E8B91C1C91271C006F3B10 /* LaunchScreen.storyboard in Resources */,
 				69E8B9191C91271C006F3B10 /* Assets.xcassets in Resources */,
 				69E8B9171C91271C006F3B10 /* Main.storyboard in Resources */,
+				69B2D73B1C92690600F07238 /* AcromineCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -255,7 +264,8 @@
 				69E8B9111C91271C006F3B10 /* AppDelegate.m in Sources */,
 				69B2D7321C91495200F07238 /* WebService.m in Sources */,
 				69E8B90E1C91271C006F3B10 /* main.m in Sources */,
-				69B2D72F1C913FE200F07238 /* AcromineTableViewCell.m in Sources */,
+				69B2D73A1C92690600F07238 /* AcromineCell.m in Sources */,
+				69B2D73E1C926D4200F07238 /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
